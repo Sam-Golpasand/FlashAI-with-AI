@@ -15,13 +15,13 @@ CHROMA_PATH = "chroma"
 DATA_PATH = "data"
 
 
-async def main():
+async def main(amount=5):
     # Hvis disse funktioner er synkrone, skal de kaldes uden await.
     documents = await load_documents()  # Synkron funktion
     chunks = await split_documents(documents)  # Synkron funktion
     await add_to_chroma(chunks)  # Synkron funktion
 
-    response, source = await generate_questions()
+    response, source = await generate_questions(amount)
     question, answer = split_output(response)
 
     # Udskriv resultatet

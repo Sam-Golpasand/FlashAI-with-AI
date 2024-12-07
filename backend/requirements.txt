@@ -6,7 +6,7 @@ pytest
 boto3
 langchain_community
 langchain_text_splitters
-langchain_hugginface
+langchain_huggingface
 supabase
 langchain_openai
 pandas

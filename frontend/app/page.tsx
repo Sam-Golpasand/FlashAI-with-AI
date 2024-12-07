@@ -7,6 +7,7 @@ import { createClient } from "@/utils/supabase/client";
 import { DeckForm } from "@/components/DeckForm";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from "next/navigation";
 
 interface Card {
   question: string;
@@ -18,6 +19,7 @@ interface ApiResponse {
 }
 
 export default function Index() {
+  const router = useRouter();
   const [files, setFiles] = useState<File[]>([]);
   const [response, setResponse] = useState<ApiResponse | null>(null);
   const [deckName, setDeckName] = useState<string>(""); // State for deck name
@@ -55,6 +57,7 @@ export default function Index() {
       formData.append("files", file);
     });
     formData.append("deckAmount", deckAmount.toString());
+    
 
     try {
       const res = await fetch("http://localhost:5000/file-upload", {
@@ -107,6 +110,7 @@ export default function Index() {
       }
 
       toast.success("Deck and cards created successfully");
+      router.replace(`/decks/`);
     } catch (error) {
       console.error("Error:", error);
       toast.error("An error occurred. Please try again.");

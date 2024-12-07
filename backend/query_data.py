@@ -28,7 +28,7 @@ Svar || Spørgsmål:
 """
 
 
-async def generate_questions(topic_id=None,num_questions=5):
+async def generate_questions(num_questions=5, topic_id=None):
     '''
     input topic id from a question the user didn't answer
     don't input a topic id if you want a random topic
