@@ -10,3 +10,5 @@ langchain_huggingface
 supabase
 langchain_openai
 pandas
+flask
+flask_cors
