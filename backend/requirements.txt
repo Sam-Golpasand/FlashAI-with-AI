@@ -1,0 +1,12 @@
+langchain-chroma
+pypdf
+langchain
+chromadb # Vector storage
+pytest
+boto3
+langchain_community
+langchain_text_splitters
+langchain_hugginface
+supabase
+langchain_openai
+pandas
