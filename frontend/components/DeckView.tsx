@@ -105,8 +105,8 @@ export default function DeckView() {
               </div>
             </CardHeader>
             <CardFooter className="flex justify-center p-2 gap-2">
-             <Link href={`/study/${deck.id}`}><Button variant="outline" className="w-full">Study</Button></Link> 
-              <Button onClick={() => deleteDeck(deck.id)} variant="destructive" className="w-full">Delete</Button>
+             <Link href={`/study/${deck.id}`} className="w-full"><Button variant="outline" className="w-full">Study</Button></Link> 
+              <Link href={""} className="w-full"><Button onClick={() => deleteDeck(deck.id)} variant="destructive" className="w-full">Delete</Button></Link>
             </CardFooter>
           </Card>
         ))}
