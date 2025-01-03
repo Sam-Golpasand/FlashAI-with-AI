@@ -60,7 +60,7 @@ export default function Index() {
     
 
     try {
-      const res = await fetch("http://localhost:5000/file-upload", {
+      const res = await fetch("http://localhost:3011/file-upload", {
         method: "POST",
         body: formData,
       });
