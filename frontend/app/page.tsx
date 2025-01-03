@@ -60,7 +60,7 @@ export default function Index() {
     
 
     try {
-      const res = await fetch("http://localhost:3011/file-upload", {
+      const res = await fetch("https://flashai.dk/file-upload", {
         method: "POST",
         body: formData,
       });
