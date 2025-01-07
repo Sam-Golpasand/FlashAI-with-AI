@@ -12,3 +12,4 @@ langchain_openai
 pandas
 flask
 flask_cors
+python-dotenv

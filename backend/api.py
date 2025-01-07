@@ -9,8 +9,7 @@ import os
 from dataLoader import main as load_data
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})
-
+CORS(app)
 # Configure upload folder
 UPLOAD_FOLDER = './data'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)

@@ -2,13 +2,17 @@ import argparse
 from langchain_chroma import Chroma
 from langchain.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
+from dotenv import load_dotenv
 import random
+import os
 from embedding_function import get_embedding_function
+
+load_dotenv(dotenv_path="../frontend/.env.local")
 
 CHROMA_PATH = "chroma"
 embedding_function = get_embedding_function()
 db = Chroma(persist_directory=CHROMA_PATH, embedding_function=embedding_function)
-KEY = "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"
+KEY = os.getenv("OPENAI_API_KEY")
 
 
 PROMPT_TEMPLATE = """
