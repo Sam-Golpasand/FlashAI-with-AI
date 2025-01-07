@@ -51,7 +51,14 @@ FlashAI-with-AI is designed to help users learn and memorize information through
     # or
     bun install
     ```
-4. Run the development server:
+4. Create .env.local file and input the following:
+```bash
+NEXT_PUBLIC_SUPABASE_URL=<Input Supabase URL here>
+NEXT_PUBLIC_SUPABASE_ANON_KEY=<Input Supabase Anon Key here>
+OPENAI_API_KEY=<Input OpenAI key here>
+
+```
+5. Run the development server:
     ```bash
     npm run dev
     # or
