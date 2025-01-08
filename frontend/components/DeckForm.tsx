@@ -32,18 +32,35 @@ export function DeckForm({ onSubmit, isLoading }: DeckFormProps) {
         required
       />
       {/* Deck Amount Input */}
-      <input 
-        type="number" 
-        value={deckAmount.toString()} 
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-          const value = parseInt(e.target.value, 10);
-          setDeckAmount(Number.isNaN(value) ? 1 : value); // Handle invalid or empty inputs
-        }} 
-        id="deckAmount" 
-        className="w-full bg-[#282831] text-white p-4 rounded-lg"
-        required
-        min="1"
-      />
+      <div className="flex flex-col space-y-2">
+        <label 
+          htmlFor="deckAmount" 
+          className="text-sm font-medium text-gray-300"
+        >
+          Card Amount
+        </label>
+        <div className="relative">
+          <input 
+            type="number" 
+            id="deckAmount" 
+            value={deckAmount.toString()} 
+            placeholder="Enter amount..." 
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              const value = parseInt(e.target.value, 10);
+              setDeckAmount(Number.isNaN(value) ? 1 : value); // Handle invalid or empty inputs
+            }} 
+            className="w-full bg-[#282831] text-white p-3 rounded-md shadow-md focus:ring-2 focus:ring-blue-500 focus:outline-none" 
+            required 
+            min={1}
+          />
+          <span className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-400 pointer-events-none">
+            #
+          </span>
+        </div>
+      </div>
+
+
+
       {/* Submit Button */}
       <Button type="submit" className="w-full" disabled={isLoading}>
         {isLoading ? "Generating..." : "Generate"}
