@@ -20,8 +20,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className="be-vietnam dark ">
-        <Navbar />
+      <body className="beVietnam dark ">
           {children}
         <ToastContainer />
       </body>
